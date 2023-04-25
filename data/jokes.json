@@ -2,28 +2,28 @@
   "jokes": [{
     "entryDate": "01/01/0001", 
     "author": "Nigel Davis", 
-    "joke": "null",
-    "punchline": "null"
+    "joke": "When is a car not a car?",
+    "punchline": "When it turns into a street"
   }, {
     "entryDate": "01/01/0001", 
-    "author": "Nigel Davis", 
-    "joke": "null",
-    "punchline": "null"
+    "author": "John Pork", 
+    "joke": "What do you call anxious dinosaurs?",
+    "punchline": "Nervous Rex"
   }, {
     "entryDate": "01/01/0001", 
-    "author": "Nigel Davis", 
-    "joke": "null",
-    "punchline": "null"
+    "author": "Thomas Ridings", 
+    "joke": "What do you call an unpredictable camera?",
+    "punchline": "A loose Canon"
   }, {
     "entryDate": "01/01/0001", 
-    "author": "Nigel Davis", 
-    "joke": "null",
-    "punchline": "null"
+    "author": "Stephen Corb", 
+    "joke": "Where do Volkswagens go when they get old?",
+    "punchline": "The old Volks home"
   }, {
     "entryDate": "01/01/0001", 
-    "author": "Nigel Davis", 
-    "joke": "null",
-    "punchline": "null"
-  }, 
+    "author": "Xavier Lloyd", 
+    "joke": "What musical instrument is found in the bathroom?",
+    "punchline": "A tube-a toothpaste"
+  } 
 
 ]}
