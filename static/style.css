@@ -1,0 +1,8 @@
+.unSelectedRow{
+  background-color: orange;
+  color: black;
+}
+
+.selectedRow{
+  background-color: white;
+}

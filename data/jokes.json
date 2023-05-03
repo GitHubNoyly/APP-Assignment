@@ -5,25 +5,30 @@
     "joke": "When is a car not a car?",
     "punchline": "When it turns into a street"
   }, {
-    "entryDate": "01/01/0001", 
+    "entryDate": "01/01/0002", 
     "author": "John Pork", 
     "joke": "What do you call anxious dinosaurs?",
     "punchline": "Nervous Rex"
   }, {
-    "entryDate": "01/01/0001", 
+    "entryDate": "01/01/0003", 
     "author": "Thomas Ridings", 
     "joke": "What do you call an unpredictable camera?",
     "punchline": "A loose Canon"
   }, {
-    "entryDate": "01/01/0001", 
+    "entryDate": "01/01/0004", 
     "author": "Stephen Corb", 
     "joke": "Where do Volkswagens go when they get old?",
     "punchline": "The old Volks home"
   }, {
-    "entryDate": "01/01/0001", 
+    "entryDate": "01/01/0005", 
     "author": "Xavier Lloyd", 
     "joke": "What musical instrument is found in the bathroom?",
     "punchline": "A tube-a toothpaste"
-  } 
+  }, {
+    "entryDate": "01/01/0006", 
+    "author": "Xavier Lloyd", 
+    "joke": "What is the scariest tree",
+    "punchline": "A bamBOO"
+  }
 
 ]}

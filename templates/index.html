@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Jokes</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="static/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -14,7 +14,7 @@
   <h3>Here are 5 random jokes</h3>
 
 
-  <div>
+  <div class="display_jokes">
     <ul>
       <li id="placeholder1"></li>
       <li id="placeholder2"></li>
@@ -24,6 +24,13 @@
     </ul>
   </div>
 
+  <div class="add_joke_inputs">
+    <input type="date" id="entry_date" name="eDate" placeholder="Enter Entry Date"><br>
+    <input type="text" id="author" name="author" placeholder="Enter Author Name"><br>
+    <input type="text" id="joke" name="joke" placeholder="Enter Joke"><br>
+    <input type="text" id="punchline" name="pLine" placeholder="Enter Punchline"><br>
+    <button type="button" onclick="alert(uploadJokes())">Click To Submit Joke</button>
+  </div>
   
   <script src="/static/scripts/script.js"></script>
 
