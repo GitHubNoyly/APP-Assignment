@@ -93,42 +93,41 @@ function tableLoad(displayJokes){
 
 function uploadJokes(){
   //get list 
-  let uploadList = document.getElementsByClassName("add_joke_inputs");
+  let uploadList = document.getElementById("add_joke_inputs");
   var entriesList = document.getElementsByTagName("input");
-  //console.log("entries no. " + entriesList.length)
+  //console.log("entries no. " + entriesList.length);
   // make object to convert to JSON
   let uploadObject = {};
-  uploadObject.journals = [];
+  uploadObject.jokes = [];
   //list items and put into an array of objects
-  //console.log(entriesList)
-  for (let i = 0; i < entriesList.length ; i++){
-    //console.log("upload entry " + entriesList[i].innerHTML);
-    let objEntry = {}
-    objEntry.entryDate = entriesList[i].getAttribute("eDate");
-    objEntry.author = entriesList[i].getAttribute("author");
-    objEntry.joke = entriesList[i].getAttribute("joke");
-    objEntry.punchline = entriesList[i].getAttribute("pLine");
-    uploadObject.journals.push(objEntry);
-  }
-  //console.log("upload Object:" + JSON.stringify(uploadObject));
-  //console.log(uploadObject.journals[0])
+  console.log(entriesList);
+  
+  let objEntry = {};
+  objEntry.entryDate = document.getElementById("entry_date").innerHTML;
+  objEntry.author = document.getElementById("author").innerHTML;
+  objEntry.joke = document.getElementById("joke").innerHTML;
+  objEntry.punchline = document.getElementById("punchline").innerHTML;
+  uploadObject.jokes.push(objEntry);
+  
+  console.log("upload Object:" + JSON.stringify(uploadObject));
+  //console.log(uploadObject.journals[0]);
 
   //convert object to JSON and put to api
   let xhttp = new XMLHttpRequest();
-  let url = "/api/jokes"
+  let url = "/api/jokes";
   
     xhttp.onreadystatechange = function() {
       let strResponse = "Error: no response";
       if (this.readyState == 4 && this.status == 200) {
         strResponse = JSON.parse(this.responseText);
-        alert(strResponse.message)
+        alert(strResponse.message);
       }
       //document.getElementById(elResponse).setAttribute("value",  strResponse.result);
       
     };
     xhttp.open("PUT", url, true);
     // Converting JSON data to string
-    var data = JSON.stringify(uploadObject)
+    var data = JSON.stringify(uploadObject);
     // Set the request header i.e. which type of content you are sending
     xhttp.setRequestHeader("Content-Type", "application/json");
     //send it

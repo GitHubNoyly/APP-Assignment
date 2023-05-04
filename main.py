@@ -18,22 +18,31 @@ def joke():
   return file.read()
 
 @app.route("/api/jokes", methods=['PUT'])
-def upload():
-  messageOK = jsonify(message="Joke Succsesfully Uploaded")
-  messageFail = jsonify(message="Upload Failed")
-  if request.is_json:
-    req = request.get_json()  # Parse the JSON into a Python dictionary
-    site_root = os.path.realpath(os.path.dirname(__file__))
-    #save json to file
-    json_url = os.path.join(site_root, "data", "jokes.json")
-    with open(json_url, 'w') as openfile:  # with keyword deals with closing file
-      json.dump(req, openfile)
-      # Return a string along with an HTTP status code
-    return messageOK, 200
-  else:
-    # The request body wasn't JSON so return a 400 HTTP status code
-    return messageFail, 400
+def uploadjoke():
+    print('saving joke')
+    messageOK = jsonify(message="Jokes Successfully uploaded!")
+    messageFail = jsonify(message="Uploading jokes failed")
+    if request.is_json:
+        # Parse the JSON into a Python dictionary
+        req = request.get_json()
+        # Print the dictionary
+        print(req)
+        #save json to file
+        # file_name = "data/journal_test.json"
+        site_root = os.path.realpath(os.path.dirname(__file__))
+        json_url = os.path.join(site_root, "data", "jokes.json")
 
+        # with keyword deals with closing file etc.
+        with open(json_url, 'w') as openfile:
+            json.dump(req, openfile)
+
+        # Return a string along with an HTTP status code
+        return messageOK, 200
+
+    else:
+
+        # The request body wasn't JSON so return a 400 HTTP status code
+        return messageFail, 400
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', port=8080)
