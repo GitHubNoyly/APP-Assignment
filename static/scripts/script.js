@@ -92,21 +92,16 @@ function tableLoad(displayJokes){
 }
 
 function uploadJokes(){
-  //get list 
-  let uploadList = document.getElementById("add_joke_inputs");
-  var entriesList = document.getElementsByTagName("input");
   //console.log("entries no. " + entriesList.length);
   // make object to convert to JSON
   let uploadObject = {};
   uploadObject.jokes = [];
-  //list items and put into an array of objects
-  console.log(entriesList);
   
   let objEntry = {};
-  objEntry.entryDate = document.getElementById("entry_date").innerHTML;
-  objEntry.author = document.getElementById("author").innerHTML;
-  objEntry.joke = document.getElementById("joke").innerHTML;
-  objEntry.punchline = document.getElementById("punchline").innerHTML;
+  objEntry.entryDate = document.getElementById("entry_date").value;
+  objEntry.author = document.getElementById("author").value;
+  objEntry.joke = document.getElementById("joke").value;
+  objEntry.punchline = document.getElementById("punchline").value;
   uploadObject.jokes.push(objEntry);
   
   console.log("upload Object:" + JSON.stringify(uploadObject));
