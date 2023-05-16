@@ -92,20 +92,18 @@ function tableLoad(displayJokes){
 }
 
 function uploadJokes(){
-  //console.log("entries no. " + entriesList.length);
+
   // make object to convert to JSON
   let uploadObject = {};
   uploadObject.jokes = [];
   
-  let objEntry = {};
-  objEntry.entryDate = document.getElementById("entry_date").value;
-  objEntry.author = document.getElementById("author").value;
-  objEntry.joke = document.getElementById("joke").value;
-  objEntry.punchline = document.getElementById("punchline").value;
+  const objEntry = {
+    entryDate:document.getElementById("entry_date").value,
+    author:document.getElementById("author").value,
+    joke:document.getElementById("joke").value,
+    punchline:document.getElementById("punchline").value
+  };
   uploadObject.jokes.push(objEntry);
-  
-  console.log("upload Object:" + JSON.stringify(uploadObject));
-  //console.log(uploadObject.journals[0]);
 
   //convert object to JSON and put to api
   let xhttp = new XMLHttpRequest();
@@ -117,15 +115,16 @@ function uploadJokes(){
         strResponse = JSON.parse(this.responseText);
         alert(strResponse.message);
       }
-      //document.getElementById(elResponse).setAttribute("value",  strResponse.result);
       
     };
     xhttp.open("PUT", url, true);
     // Converting JSON data to string
     var data = JSON.stringify(uploadObject);
+    console.log(data);
     // Set the request header i.e. which type of content you are sending
     xhttp.setRequestHeader("Content-Type", "application/json");
     //send it
     xhttp.send(data);
 
+    document.location.reload();
 }

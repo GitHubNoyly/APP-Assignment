@@ -28,13 +28,12 @@ def uploadjoke():
         # Print the dictionary
         print(req)
         #save json to file
-        # file_name = "data/journal_test.json"
         site_root = os.path.realpath(os.path.dirname(__file__))
         json_url = os.path.join(site_root, "data", "jokes.json")
 
         # with keyword deals with closing file etc.
         with open(json_url, 'w') as openfile:
-            json.dump(req, openfile)
+            json.dump(req, openfile, indent=2)
 
         # Return a string along with an HTTP status code
         return messageOK, 200

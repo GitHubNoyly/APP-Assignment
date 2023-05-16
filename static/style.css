@@ -6,3 +6,11 @@
 .selectedRow{
   background-color: white;
 }
+
+input{
+  margin-bottom: 1%;
+}
+
+button{
+  margin-bottom: 2%;
+}
