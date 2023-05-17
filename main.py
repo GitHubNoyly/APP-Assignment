@@ -5,23 +5,26 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def display_homepage():
-  return render_template('index.html')
+def displayHomepage():
+    return render_template('index.html')
 
 
 @app.route("/api/jokes", methods=['GET'])
-def joke():
-  site_root = os.path.realpath(os.path.dirname(__file__))
-  json_url = os.path.join(site_root, "data", "jokes.json")
-  file = open(json_url, "r")
+def getJokes():
+    site_root = os.path.realpath(os.path.dirname(__file__))
+    json_url = os.path.join(site_root, "data", "jokes.json")
 
-  return file.read()
+    with open(json_url, 'r') as openfile:
+        json_object = json.load(openfile)
+    return json_object
+
 
 @app.route("/api/jokes", methods=['PUT'])
-def uploadjoke():
-    print('saving joke')
-    messageOK = jsonify(message="Jokes Successfully uploaded!")
-    messageFail = jsonify(message="Uploading jokes failed")
+def uploadJokes():
+    print('saving jokes')
+    messageOK = jsonify(message="your jokes have been uploaded!")
+    messageFail = jsonify(
+        message="Uploading Jokes failed")
     if request.is_json:
         # Parse the JSON into a Python dictionary
         req = request.get_json()
@@ -33,7 +36,7 @@ def uploadjoke():
 
         # with keyword deals with closing file etc.
         with open(json_url, 'w') as openfile:
-            json.dump(req, openfile, indent=2)
+            json.dump(req, openfile, indent = 3)
 
         # Return a string along with an HTTP status code
         return messageOK, 200
@@ -43,5 +46,7 @@ def uploadjoke():
         # The request body wasn't JSON so return a 400 HTTP status code
         return messageFail, 400
 
-if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=8080)
+
+# run app
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)

@@ -2,48 +2,66 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Jokes</title>
-  <link href="static/style.css" rel="stylesheet" type="text/css" />
+	<title>APP Assignment</title>
+	<link rel="stylesheet" href="static/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+
+  <div id="journal">
+
+    <h1 class="text-center">Welcome To My Webpage Filled With Funny Jokes</h2>
+      
+    <div class="jokeList text-center">
+        <h3>List of Jokes</h3>
+        <ol id="jokeEntries">
+          <li>item 1</li>
+          <li>item 2</li>
+        </ol>
+    </div>
+
+    <div class="text-center"><button id="btnUploadJokes">Upload Jokes</button></div>
   
-  <h1>Welcome To This Webpage Which Tells Funny Jokes</h1>
-  <h3>Here are 5 random jokes</h3>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col jokesItem">
+            <h3>Selected Joke Entry</h3>
+              <div>
+                  <div><label for="idEntry">Joke ID: </label>
+                  <input type="text" id="idEntry" disabled></div>
+                  <div><label for="dateEntry">Date Created: </label>
+                  <input type="text" id="dateEntry" disabled></div>
+                  <div><label for="jokeEntry">Joke: </label>
+                  <textarea type="text" id="jokeEntry" rows="1" cols="50" disabled></textarea></div>
+                  <div><label for="punchlineEntry">Punchline: </label>
+                  <textarea id="punchlineEntry" name="punchlineEntry" rows="1" cols="50" disabled></textarea></div>
+              </div>
+            <div> <button id="btnDeleteEntry">Delete Selected Joke</button></div>
+        </div>
 
-
-  <div class="display_jokes">
-    <ul>
-      <li id="placeholder1"></li>
-      <li id="placeholder2"></li>
-      <li id="placeholder3"></li>
-      <li id="placeholder4"></li>
-      <li id="placeholder5"></li>
-    </ul>
+        <div class="col addItem">
+              <h3>Add a Joke Entry</h3>
+              <div>
+                  <div><label for="idEntry">Joke ID:</label>
+                  <input type="text" id="idAdd" value="auto generated - ignore" disabled required></div>
+                  <div><label for="dateEntry">Date: </label>
+                  <input type="text" id="dateAdd" value="auto generated - ignore" disabled  required></div>
+                  <div><label for="nameEntry">Joke: </label>
+                  <textarea type="text" id="jokeAdd" rows="1" cols="50" required></textarea></div>
+                  <div><label for="txtEntry">Punchline: </label>
+              <textarea id="punchlineAdd" name="punchlineAdd" rows="1" cols="50" required></textarea></div>
+          </div>
+            <button id="btnAddEntry">Add Joke</button>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="add_joke_inputs">
-    <input type="date" id="entry_date" name="eDate" placeholder="Enter Entry Date"><br>
-    <input type="text" id="author" name="author" placeholder="Enter Author Name"><br>
-    <input type="text" id="joke" name="joke" placeholder="Enter Joke"><br>
-    <input type="text" id="punchline" name="pLine" placeholder="Enter Punchline"><br>
-    <button type="button" onclick="uploadJokes()">Click To Submit Joke</button>
-  </div>
-  
-  <script src="/static/scripts/script.js"></script>
-
-  <!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-  
-  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
-
-
-  
+<script src="static/scripts/script.js"></script>
 </body>
-
 </html>

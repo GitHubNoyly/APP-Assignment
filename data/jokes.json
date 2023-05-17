@@ -1,34 +1,74 @@
 {
-  "jokes": [{
-    "entryDate": "01/01/0001", 
-    "author": "Nigel Davis", 
-    "joke": "When is a car not a car?",
-    "punchline": "When it turns into a street"
-  }, {
-    "entryDate": "01/01/0002", 
-    "author": "John Pork", 
-    "joke": "What do you call anxious dinosaurs?",
-    "punchline": "Nervous Rex"
-  }, {
-    "entryDate": "01/01/0003", 
-    "author": "Thomas Ridings", 
-    "joke": "What do you call an unpredictable camera?",
-    "punchline": "A loose Canon"
-  }, {
-    "entryDate": "01/01/0004", 
-    "author": "Stephen Corb", 
-    "joke": "Where do Volkswagens go when they get old?",
-    "punchline": "The old Volks home"
-  }, {
-    "entryDate": "01/01/0005", 
-    "author": "Xavier Lloyd", 
-    "joke": "What musical instrument is found in the bathroom?",
-    "punchline": "A tube-a toothpaste"
-  }, {
-    "entryDate": "01/01/0006", 
-    "author": "Xavier Lloyd", 
-    "joke": "What is the scariest tree",
-    "punchline": "A bamBOO"
-  }
-
-]}
+   "jokes": [
+      {
+         "date": "16/4/2023 22:16",
+         "joke": "Why couldn the bicycle get back up",
+         "punchline": "It was two tired."
+      },
+      {
+         "date": "16/4/2023 22:18",
+         "joke": "Did you hear about the scientist who was lab partners with a pot of boiling water?",
+         "punchline": "He had a very esteemed colleague."
+      },
+      {
+         "date": "16/4/2023 22:19",
+         "joke": "Why do dragons sleep during the day?",
+         "punchline": "So they can fight knights!"
+      },
+      {
+         "date": "16/4/2023 22:30",
+         "joke": "I",
+         "punchline": "I figure it"
+      },
+      {
+         "date": "16/4/2023 22:31",
+         "joke": "I just watched a documentary about beavers.",
+         "punchline": "It was the best dam show I ever saw!"
+      },
+      {
+         "date": "16/4/2023 22:35",
+         "joke": "How do you get a blind person to see?",
+         "punchline": "Usually by boat."
+      },
+      {
+         "date": "16/4/2023 22:36",
+         "joke": "Whoever stole my depression medication:",
+         "punchline": "I hope you"
+      },
+      {
+         "date": "16/4/2023 22:37",
+         "joke": "Remember that joke I told you about the chiropractor?",
+         "punchline": "It was about a weak back."
+      },
+      {
+         "date": "16/4/2023 22:38",
+         "joke": "Where do pancakes rise?",
+         "punchline": "In the yeast."
+      },
+      {
+         "date": "16/4/2023 22:38",
+         "joke": "Why do balloons hate Ed Sheeran concerts?",
+         "punchline": "They are afraid of pop music."
+      },
+      {
+         "date": "16/4/2023 23:46",
+         "joke": "Noyal",
+         "punchline": "I love you"
+      },
+      {
+         "date": "17/4/2023 12:4",
+         "joke": "alejandra ",
+         "punchline": "is super sexy"
+      },
+      {
+         "date": "17/4/2023 12:10",
+         "joke": "Guess what om doing",
+         "punchline": "Peeing"
+      },
+      {
+         "date": "17/4/2023 12:13",
+         "joke": "Guess what om doing",
+         "punchline": "Peeing"
+      }
+   ]
+}

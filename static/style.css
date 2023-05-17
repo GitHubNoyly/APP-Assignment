@@ -1,16 +1,78 @@
-.unSelectedRow{
-  background-color: orange;
-  color: black;
+body{
+  color: #5EBEC4 !important;
+  padding: 0 3% 3% 3%;
+  background-color: #FDF5DF !important;
 }
 
-.selectedRow{
-  background-color: white;
+h1,h3{
+  padding:2.5%;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
 }
 
-input{
-  margin-bottom: 1%;
+.jokeList{
+  background-color: #F92C85;
+  padding: 1.5%;
+  border: none;
+  border-radius: 10px;
+}
+
+
+.jokesItem{
+  padding: 2.5%;
+  margin: 5%;
+  background-color: #F92C85;
+  border: none;
+  border-radius: 10px;
+}
+
+.jokesItem > div > div{
+    padding:1%;
+}
+
+.addItem{
+  padding: 2.5%;
+  margin: 5%;
+  background-color: #F92C85;
+  border: none;
+  border-radius: 10px;
+}
+
+.addItem > div > div{
+    padding:1%;
+}
+
+ol{
+  max-width: 98%;
+  list-style-type: none;
+}
+
+li{
+  transition-duration: 1s;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  color: #F92C85;
+  background-color: #5EBEC4;
+}
+
+li:hover{
+  transition-duration: 0.5s;
+  background-color: #FDF5DF;
 }
 
 button{
-  margin-bottom: 2%;
+  transition-duration: 1s;
+  padding: 1% 3%;
+  margin: 2.5% !important;
+  border: none;
+  border-radius: 10px !important;
+  color: #F92C85;
+  background-color: #5EBEC4;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+}
+
+button:hover{
+  transition-duration: 1s;
+  background-color: #FDF5DF;
 }
