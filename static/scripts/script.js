@@ -1,6 +1,8 @@
 //event handlers for jokes
 document.getElementById("jokeEntries").addEventListener('click', populateEntry);
 document.getElementById("btnDeleteEntry").addEventListener('click', deleteEntry);
+document.getElementById("btnDeleteRandomEntry").addEventListener('click', deleteRandomEntry);
+document.getElementById("btnLoadRandomEntry").addEventListener('click', randomJokeEntry);
 document.getElementById("btnAddEntry").addEventListener('click', addEntry);
 document.getElementById("btnUploadJokes").addEventListener('click', uploadJournal);
 
@@ -28,6 +30,7 @@ function getJokes(){
       }
      
     document.getElementById("jokeEntries").innerHTML = jokeList;
+    randomJokeEntry();
     
     }
     else{
@@ -45,11 +48,31 @@ function clearEntry(){
     document.getElementById("punchlineEntry").value = "";
 }
 
+function clearRandomEntry(){
+    document.getElementById("randomIdEntry").value = "";
+    document.getElementById("randomDateEntry").value = "";
+    document.getElementById("randomJokeEntry").value = "";
+    document.getElementById("randomPunchlineEntry").value = "";
+}
+
+function randomJokeEntry() {
+  const jokes = document.getElementsByTagName("li");
+  const randomJoke = document.getElementsByTagName("li")[Math.floor(Math.random() * jokes.length)];
+  console.log(randomJoke);
+  let itemIndex = randomJoke.getAttribute("id");
+  let itemDate = randomJoke.getAttribute("dat");
+  let itemJoke = randomJoke.getAttribute("joke");
+  let itemPunchline = randomJoke.getAttribute("punchline");
+  document.getElementById("randomIdEntry").value = itemIndex;
+  document.getElementById("randomDateEntry").value = itemDate;
+  document.getElementById("randomJokeEntry").value = itemJoke;
+  document.getElementById("randomPunchlineEntry").value = itemPunchline;
+}
+
 function populateEntry(e){
     //clear old entry
     clearEntry()
-    //console.log("item: " + e.target);
-    let itemIndex = e.target.id
+    let itemIndex = e.target.id;
     let itemDate = e.target.getAttribute("dat");
     let itemJoke = e.target.getAttribute("joke");
     let itemPunchline = e.target.getAttribute("punchline");
@@ -87,10 +110,25 @@ function deleteEntry(){
   if(idToDelete != ""){
     document.getElementById(idToDelete).remove(); 
     //remove deleted details from selected entry boxes
-    clearEntry()
-    alert("Journal entry deleted on clientside. Upload to save changes.")
+    clearEntry();
+    alert("Joke entry has been deleted on clientside. Upload to save changes.");
   } else {
-    alert("Please select an entry to delete.")
+    alert("Please select an entry to delete.");
+  }
+ 
+
+}
+
+function deleteRandomEntry(){
+  let idToDelete = document.getElementById("randomIdEntry").value; 
+  if(idToDelete != ""){
+    document.getElementById(idToDelete).remove(); 
+    //remove deleted details from selected entry boxes
+    clearRandomEntry();
+    alert("Joke entry has been deleted on clientside. Upload to save changes. Loading new funny joke");
+    randomJokeEntry();
+  } else {
+    alert("Please select an entry to delete.");
   }
  
 
@@ -114,9 +152,7 @@ function uploadJournal(){
     objEntry.punchline = entriesList[i].getAttribute("punchline");
     uploadObject.jokes.push(objEntry);
   }
-  //console.log("upload Object:" + JSON.stringify(uploadObject));
-  //console.log(uploadObject.journals[0])
-
+  
   //convert object to JSON and put to api
   let xhttp = new XMLHttpRequest();
   let url = "/api/jokes"
@@ -130,6 +166,7 @@ function uploadJournal(){
       //document.getElementById(elResponse).setAttribute("value",  strResponse.result);
       
     };
+  
     xhttp.open("PUT", url, true);
     // Converting JSON data to string
     var data = JSON.stringify(uploadObject)

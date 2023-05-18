@@ -16,6 +16,33 @@
   <div id="journal">
 
     <h1 class="text-center">Welcome To My Webpage Filled With Funny Jokes</h2>
+
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class=" col randomJokesItem text-center">
+            <h3>Random Joke Entry</h3>
+              <div>
+                <div><label for="randomIdEntry">Joke ID: </label>
+                <input type="text" id="randomIdEntry" disabled></div>
+                <div><label for="randomDateEntry">Date Created: </label>
+                <input type="text" id="randomDateEntry" disabled></div>
+                <div><label for="randomJokeEntry">Joke: </label>
+                <textarea type="text" id="randomJokeEntry" rows="1" cols="50" disabled></textarea></div>
+                <div><label for="randomPunchlineEntry">Punchline: </label>
+                <textarea id="randomPunchlineEntry" name="randomPunchlineEntry" rows="1" cols="50" disabled></textarea></div>
+                <div class="container">
+                  <div class="row">
+                    <div class="col"> <button id="btnLoadRandomEntry">Load Random Joke</button></div>
+                    <div class="col"> <button id="btnDeleteRandomEntry">Delete Selected Joke</button></div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+
       
     <div class="jokeList text-center">
         <h3>List of Jokes</h3>
@@ -23,9 +50,8 @@
           <li>item 1</li>
           <li>item 2</li>
         </ol>
+        <div class="text-center"><button id="btnUploadJokes">Upload Jokes</button></div>
     </div>
-
-    <div class="text-center"><button id="btnUploadJokes">Upload Jokes</button></div>
   
     <div class="container text-center">
       <div class="row">
