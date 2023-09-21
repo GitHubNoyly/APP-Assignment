@@ -158,7 +158,6 @@ function deleteRandomEntry(){
   if(idToDelete != ""){
     document.getElementById(idToDelete).remove(); 
     //remove deleted details from selected entry boxes
-    clearRandomEntry();
     alert("Joke entry has been deleted on clientside. Upload to save changes. Loading new funny joke");
     randomJokeEntry();
   } else {
